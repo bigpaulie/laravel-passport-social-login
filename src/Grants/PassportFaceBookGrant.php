@@ -1,6 +1,6 @@
 <?php
 
-namespace bigpaulie\laravel\passport\social\Grants;
+namespace Bigpaulie\Laravel\Social\Passport\Grants;
 
 
 use Illuminate\Http\Request;

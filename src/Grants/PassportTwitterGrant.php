@@ -1,6 +1,6 @@
 <?php
 
-namespace bigpaulie\laravel\passport\social\Grants;
+namespace Bigpaulie\Laravel\Social\Passport\Grants;
 
 
 use Illuminate\Http\Request;
@@ -24,7 +24,7 @@ class PassportTwitterGrant extends AbstractGrant
     /**
      * PassportTwitterGrant constructor.
      * @param UserRepositoryInterface $userRepository
-     * @param RefreshTokenRepositoryInterface $tokenRepositorys
+     * @param RefreshTokenRepositoryInterface $tokenRepository
      */
     public function __construct(
         UserRepositoryInterface $userRepository,

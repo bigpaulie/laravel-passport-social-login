@@ -1,6 +1,7 @@
 {
-  "name": "bigpaulie/laravel-passport-social-login",
-  "description": "Adds social login grants to Laravel's Passport library",
+  "name": "bigpaulie/laravel-social-passport",
+  "description": "Adds additional grant types to Laravel's Passport library",
+  "keywords": ["laravel", "passport", "oauth", "grant", "facebook", "twitter", "login"],
   "type": "library",
   "require-dev": {
     "phpunit/phpunit": "^6.4"
@@ -18,6 +19,6 @@
     "abraham/twitteroauth": "^0.7.4"
   },
   "autoload": {
-    "psr-4": { "bigpaulie\\laravel\\passport\\social\\": "src" }
+    "psr-4": { "Bigpaulie\\Laravel\\Social\\Passport\\": "src" }
   }
 }

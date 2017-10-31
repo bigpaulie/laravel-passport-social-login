@@ -1,6 +1,6 @@
 <?php
 
-namespace bigpaulie\laravel\passport\social\Contracts;
+namespace Bigpaulie\Laravel\Social\Passport\Contracts;
 
 use Abraham\TwitterOAuth\TwitterOAuth;
 use Illuminate\Database\Eloquent\Model;

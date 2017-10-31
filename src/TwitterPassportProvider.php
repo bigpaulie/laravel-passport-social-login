@@ -1,6 +1,6 @@
 <?php
 
-namespace bigpaulie\laravel\passport\social;
+namespace Bigpaulie\Laravel\Social\Passport;
 
 use bigpaulie\laravel\passport\social\Grants\PassportFaceBookGrant;
 use bigpaulie\laravel\passport\social\Grants\PassportTwitterGrant;
