@@ -71,20 +71,58 @@ trait SocialPassport
         return null;
     }
 
+    /**
+     * Login with Twitter.
+     *
+     * @param Request $request
+     * @return Model|null
+     * @throws OAuthServerException
+     */
     public function loginWithTwitter(Request $request)
     {
+
         $connection = new TwitterOAuth(
             config('social.twitter.key'),
             config('social.twitter.secret'),
             $request->get('twitter_token'),
             $request->get('twitter_secret')
         );
-        $content = $connection->get("account/verify_credentials", [
+
+        $twitter = $connection->get("account/verify_credentials", [
             'include_entities' => "false",
             'skip_status' => "true",
             'include_email' => "true"
         ]);
 
-        die(var_dump($content));
+        if ( $connection->getLastHttpCode() == 200 ) {
+
+            $userModel = config('auth.providers.users.model');
+
+            /**
+             * Check if the user already has an account with us
+             * if not, create a new account with data from Facebook
+             */
+            $user = $userModel::where('email', $twitter->email)->first();
+
+            if ( !$user ) {
+
+                $name = explode(' ', $twitter->name);
+
+                $user = new $userModel();
+                $user->facebook_id = $twitter->id;
+                $user->first_name = $name[0];
+                $user->last_name = $name[1];
+                $user->email = $twitter->email;
+                $user->password = bcrypt(str_random(7));
+
+                $user->save();
+            }
+
+            return $user;
+
+        } else {
+            throw OAuthServerException::accessDenied($twitter->errors[0]->message);
+        }
+
     }
 }

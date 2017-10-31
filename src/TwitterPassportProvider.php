@@ -2,8 +2,7 @@
 
 namespace Bigpaulie\Laravel\Social\Passport;
 
-use bigpaulie\laravel\passport\social\Grants\PassportFaceBookGrant;
-use bigpaulie\laravel\passport\social\Grants\PassportTwitterGrant;
+use Bigpaulie\Laravel\Social\Passport\Grants\PassportTwitterGrant;
 use Laravel\Passport\Bridge\RefreshTokenRepository;
 use Laravel\Passport\Bridge\UserRepository;
 use Laravel\Passport\Passport;
