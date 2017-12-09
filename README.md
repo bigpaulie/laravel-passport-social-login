@@ -1,5 +1,5 @@
 # Laravel social passport 
-[![Build Status](https://travis-ci.org/bigpaulie/laravel-social-passport.svg?branch=master)](https://travis-ci.org/bigpaulie/laravel-social-passport)
+[![Build Status](https://travis-ci.org/bigpaulie/laravel-social-passport.svg?branch=master)](https://travis-ci.org/bigpaulie/laravel-social-passport) [![Latest Stable Version](https://poser.pugx.org/bigpaulie/laravel-social-passport/v/stable)](https://packagist.org/packages/bigpaulie/laravel-social-passport) [![Total Downloads](https://poser.pugx.org/bigpaulie/laravel-social-passport/downloads)](https://packagist.org/packages/bigpaulie/laravel-social-passport) [![Latest Unstable Version](https://poser.pugx.org/bigpaulie/laravel-social-passport/v/unstable)](https://packagist.org/packages/bigpaulie/laravel-social-passport) [![License](https://poser.pugx.org/bigpaulie/laravel-social-passport/license)](https://packagist.org/packages/bigpaulie/laravel-social-passport) [![composer.lock](https://poser.pugx.org/bigpaulie/yii2-social-share/composerlock)](https://packagist.org/packages/bigpaulie/laravel-social-passport)
 
 This project is ideal for applications where the front-end is decoupled from the back-end such as vue.js, angular, cordova, etc.
 
