@@ -22,17 +22,12 @@ trait SocialPassport
      * @return Model|null
      * @throws OAuthServerException
      */
-    public function loginWithFacebook(Request $request)
+    public function loginWithFacebook(Request $request, Facebook $facebook)
     {
 
         try {
 
             if ( $request->has('facebook_token') ) {
-                $facebook = new Facebook([
-                    'app_id' => config('social.facebook.id'),
-                    'app_secret' => config('social.facebook.secret'),
-                    'default_graph_version' => 'v2.5'
-                ]);
 
                 $facebook->setDefaultAccessToken($request->get('facebook_token'));
 
@@ -100,7 +95,7 @@ trait SocialPassport
 
             /**
              * Check if the user already has an account with us
-             * if not, create a new account with data from Facebook
+             * if not, create a new account with data from Twitter
              */
             $user = $userModel::where('email', $twitter->email)->first();
 

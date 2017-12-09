@@ -3,6 +3,7 @@
 namespace Bigpaulie\Laravel\Social\Passport;
 
 use Bigpaulie\Laravel\Social\Passport\Grants\PassportFaceBookGrant;
+use Facebook\Facebook;
 use Laravel\Passport\Bridge\RefreshTokenRepository;
 use Laravel\Passport\Bridge\UserRepository;
 use Laravel\Passport\Passport;
@@ -36,6 +37,14 @@ class FacebookPassportProvider extends PassportServiceProvider
     public function register()
     {
         parent::register();
+
+        $this->app->bind(Facebook::class, function ($app) {
+            return new Facebook([
+                'app_id' => config('social.facebook.id'),
+                'app_secret' => config('social.facebook.secret'),
+                'default_graph_version' => 'v2.5'
+            ]);
+        });
     }
 
     /**

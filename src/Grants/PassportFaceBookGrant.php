@@ -3,6 +3,7 @@
 namespace Bigpaulie\Laravel\Social\Passport\Grants;
 
 
+use Facebook\Facebook;
 use Illuminate\Http\Request;
 use Laravel\Passport\Bridge\User;
 use League\OAuth2\Server\Entities\UserEntityInterface;
@@ -116,7 +117,8 @@ class PassportFaceBookGrant extends AbstractGrant
         }
 
         if (method_exists($model, 'loginWithFacebook')) {
-            $user = (new $model)->loginWithFacebook($request);
+            $facebook = resolve(Facebook::class);
+            $user = (new $model)->loginWithFacebook($request, $facebook);
         } else {
             throw OAuthServerException::serverError('Unable to find loginWithFacebook method on user model.');
         }
