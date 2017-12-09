@@ -9,7 +9,7 @@
 function config($key)
 {
     $array = [
-        'auth.providers.users.model' => \Bigpaulie\Laravel\Social\Passport\Tests\Stubs\User::class
+        'auth.providers.users.model' => '\Bigpaulie\Laravel\Social\Passport\Tests\Stubs\User'
     ];
 
     if ( array_key_exists($key, $array) ) {
