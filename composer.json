@@ -21,9 +21,9 @@
     "abraham/twitteroauth": "^0.7.4"
   },
   "autoload": {
-    "psr-4": {
-      "Bigpaulie\\Laravel\\Social\\Passport\\": "src",
-      "Bigpaulie\\Laravel\\Social\\Passport\\Tests\\": "tests"
-    }
+    "psr-4": { "Bigpaulie\\Laravel\\Social\\Passport\\": "src" }
+  },
+  "autoload-dev": {
+    "psr-4": { "Bigpaulie\\Laravel\\Social\\Passport\\Tests\\": "tests" }
   }
 }
