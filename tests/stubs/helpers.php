@@ -1,32 +1,34 @@
 <?php
 
 /**
- * Mock of config helper.
- *
- * @param string $key
- * @return mixed|null
+ * Define the config helper.
  */
-function config($key)
-{
-    $array = [
-        'auth.providers.users.model' => '\Bigpaulie\Laravel\Social\Passport\Tests\Stubs\User'
-    ];
-
-    if ( array_key_exists($key, $array) ) {
-        return $array[$key];
+if ( !function_exists('config') ) {
+    /**
+     * Mock of config helper.
+     *
+     * @param string $key
+     * @return mixed|null
+     */
+    function config($key)
+    {
+        return Bigpaulie\Laravel\Social\Passport\Tests\Stubs\User::class;
     }
-
-    return null;
 }
 
 /**
- * Mock of bcrypt helper.
- *
- * @param string $string
- * @return string
+ * Define the bcrypt helper.
  */
-function bcrypt($string)
-{
-    return md5(time());
+if ( !function_exists('bcrypt') ) {
+    /**
+     * Mock of bcrypt helper.
+     *
+     * @param string $string
+     * @return string
+     */
+    function bcrypt($string)
+    {
+        return md5(time());
+    }
 }
 
