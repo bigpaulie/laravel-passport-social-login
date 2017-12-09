@@ -2,7 +2,7 @@
 
 namespace Bigpaulie\Laravel\Social\Passport\Tests;
 
-include 'stubs/helpers.php';
+include 'Stubs/helpers.php';
 
 /**
  * Class TestCase

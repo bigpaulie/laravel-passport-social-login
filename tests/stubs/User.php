@@ -4,7 +4,7 @@ namespace Bigpaulie\Laravel\Social\Passport\Tests\Stubs;
 
 /**
  * Class User
- * Mock of Laravel's User object.
+ * Mock of Laravel's User model.
  *
  * @package Bigpaulie\Laravel\Social\Passport\Tests\Stubs
  */
