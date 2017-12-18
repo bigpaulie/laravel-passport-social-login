@@ -25,7 +25,12 @@ class FacebookPassportProvider extends PassportServiceProvider
     {
         $this->publishes([
             __DIR__ . '/config/social.php' => config_path('social.php'),
-        ]);
+        ], 'config');
+
+        $this->publishes([
+            __DIR__ . '/migrations/' => database_path('migrations'),
+        ], 'migrations');
+
         app(AuthorizationServer::class)->enableGrantType($this->buildRequestGrant(),
             Passport::tokensExpireIn());
     }

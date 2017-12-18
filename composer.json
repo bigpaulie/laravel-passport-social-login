@@ -1,7 +1,7 @@
 {
   "name": "bigpaulie/laravel-social-passport",
   "description": "Adds additional grant types to Laravel's Passport library",
-  "keywords": ["laravel", "passport", "oauth", "grant", "facebook", "twitter", "login"],
+  "keywords": ["laravel", "passport", "oauth", "grant", "facebook", "twitter", "login", "stateless"],
   "type": "library",
   "require-dev": {
     "phpunit/phpunit": "^6.4",
