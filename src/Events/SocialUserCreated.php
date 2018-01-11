@@ -18,14 +18,14 @@ class SocialUserCreated
      *
      * @var mixed $user
      */
-    private $user;
+    public $user;
 
     /**
      * The clear text password.
      *
      * @var string|null $clearText
      */
-    private $clearText;
+    public $clearText;
 
     /**
      * UserCreated constructor.
