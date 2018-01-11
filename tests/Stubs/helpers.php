@@ -32,3 +32,10 @@ if ( !function_exists('bcrypt') ) {
     }
 }
 
+if ( !function_exists('event') ) {
+    function event($event)
+    {
+        return [];
+    }
+}
+

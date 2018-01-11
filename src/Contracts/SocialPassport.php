@@ -3,6 +3,7 @@
 namespace Bigpaulie\Laravel\Social\Passport\Contracts;
 
 use Abraham\TwitterOAuth\TwitterOAuth;
+use Bigpaulie\Laravel\Social\Passport\Events\SocialUserCreated;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Facebook\Facebook;
@@ -46,14 +47,21 @@ trait SocialPassport
                 $user = $userModel::where('email', $facebookUser['email'])->first();
 
                 if ( !$user ) {
+
+                    $password = str_random(7);
                     $user = new $userModel();
                     $user->facebook_id = $facebookUser['id'];
                     $user->first_name = $facebookUser['first_name'];
                     $user->last_name = $facebookUser['last_name'];
                     $user->email = $facebookUser['email'];
-                    $user->password = bcrypt(str_random(7));
+                    $user->password = bcrypt($password);
 
                     $user->save();
+
+                    /**
+                     * Dispatch UserCreated event.
+                     */
+                    \event(new SocialUserCreated($user, $password));
                 }
 
                 return $user;
