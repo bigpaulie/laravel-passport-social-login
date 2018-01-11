@@ -3,9 +3,11 @@
 namespace Bigpaulie\Laravel\Social\Passport\Tests;
 
 use Bigpaulie\Laravel\Social\Passport\Contracts\SocialPassport;
+use Bigpaulie\Laravel\Social\Passport\Events\SocialUserCreated;
 use Bigpaulie\Laravel\Social\Passport\Tests\Stubs\User;
 use Facebook\Facebook;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Event;
 use Mockery as Mock;
 
 /**
